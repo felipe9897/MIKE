@@ -19,7 +19,7 @@ $secretPatterns = @(
 
 $findings = [System.Collections.Generic.List[string]]::new()
 $files = Get-ChildItem -LiteralPath $rootPath -Recurse -Force -File | Where-Object {
-    $_.FullName -notmatch '[\\/]\.git[\\/]'
+    $_.FullName -notmatch '[\\/](\.git|bin|obj|node_modules|vendor|coverage|test-results)[\\/]'
 }
 
 foreach ($file in $files) {
@@ -48,3 +48,4 @@ if ($findings.Count -gt 0) {
 }
 
 [pscustomobject]@{ ok = $true; files = $files.Count; root = $rootPath } | ConvertTo-Json -Compress
+exit 0

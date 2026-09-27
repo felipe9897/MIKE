@@ -16,6 +16,10 @@ O MIKE foi projetado para conversar, traduzir, programar, automatizar tarefas au
 - Codigo publico sera liberado por modulos auditados; sistemas internos, credenciais, dados de clientes e infraestrutura privada nao fazem parte deste repositorio.
 - Recursos que controlam o computador exigem autorizacao e mantem trilha de auditoria.
 
+## Codigo-fonte
+
+O repositorio inclui os projetos .NET do aplicativo, servico, tray, CLI, bibliotecas comuns e testes. O nucleo operacional monolitico, configuracoes de producao e sistemas de clientes permanecem no pipeline privado. Consulte [BUILDING.md](BUILDING.md) e [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
 ## Como participar
 
 Aceitamos relatos de erros, ideias, documentacao, testes, traducoes e propostas de codigo. Leia [CONTRIBUTING.md](CONTRIBUTING.md) antes de enviar uma contribuicao.
