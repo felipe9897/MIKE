@@ -4,7 +4,7 @@ Assistente local e plataforma de automacao para Windows, criado pela **MiniKe So
 
 O MIKE foi projetado para conversar, traduzir, programar, automatizar tarefas autorizadas, trabalhar com voz e celular, integrar computadores de uma rede privada e recuperar componentes com falha. O processamento local e a autonomia com confirmacao do usuario sao prioridades do projeto.
 
-> Este repositorio comecara privado durante a auditoria. A abertura publica ocorrera somente depois que codigo, historico e artefatos passarem pelas verificacoes de privacidade, seguranca e licenciamento.
+> Este repositorio nasceu privado e foi aberto somente depois que codigo, historico e artefatos passaram pelas verificacoes de privacidade, seguranca e licenciamento. O pipeline repete essas verificacoes em cada mudanca.
 
 ## Estado do projeto
 
@@ -13,7 +13,7 @@ O MIKE foi projetado para conversar, traduzir, programar, automatizar tarefas au
 - SHA-256: `C5AF7E163E65DFEEF952C8F644392A87ACA07344561D181C19ADCD5118BE1EA2`.
 - Aplicativo Windows, servico, atualizador e autocura em desenvolvimento ativo.
 - Instalador oficial publicado em [minike.com.br/local-ai](https://minike.com.br/local-ai/).
-- Codigo publico sera liberado por modulos auditados; sistemas internos, credenciais, dados de clientes e infraestrutura privada nao fazem parte deste repositorio.
+- Codigo liberado por modulos auditados; sistemas internos, credenciais, dados de clientes e infraestrutura privada nao fazem parte deste repositorio.
 - Recursos que controlam o computador exigem autorizacao e mantem trilha de auditoria.
 
 ## Codigo-fonte
