@@ -1,0 +1,19 @@
+name: Public safety
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Audit public tree
+        shell: pwsh
+        run: ./scripts/audit-public-release.ps1 -Root . -ScanGitHistory

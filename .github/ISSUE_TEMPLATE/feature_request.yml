@@ -1,0 +1,21 @@
+name: Ideia
+description: Sugira uma melhoria para o MIKE
+title: "[Ideia]: "
+labels: ["enhancement", "triage"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Qual problema esta ideia resolve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Solucao sugerida
+    validations:
+      required: true
+  - type: textarea
+    id: risks
+    attributes:
+      label: Riscos, permissoes e privacidade

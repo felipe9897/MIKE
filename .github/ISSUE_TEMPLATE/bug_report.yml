@@ -1,0 +1,39 @@
+name: Erro
+description: Relate um comportamento reproduzivel sem incluir dados privados
+title: "[Erro]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: "Nao inclua senhas, tokens, dados de clientes ou conversas privadas."
+  - type: input
+    id: version
+    attributes:
+      label: Versao do MIKE
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: O que aconteceu?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Passos para reproduzir
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Resultado esperado
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacidade
+      options:
+        - label: Removi credenciais e dados pessoais ou de clientes.
+          required: true
