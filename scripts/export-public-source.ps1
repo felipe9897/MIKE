@@ -1,7 +1,8 @@
 [CmdletBinding()]
 param(
     [Parameter(Mandatory)][string]$PrivateRoot,
-    [string]$PublicRoot = (Split-Path -Parent $PSScriptRoot)
+    [string]$PublicRoot = (Split-Path -Parent $PSScriptRoot),
+    [switch]$UpdateExisting
 )
 
 $ErrorActionPreference = 'Stop'
@@ -21,11 +22,14 @@ foreach ($relative in $required) {
 
 $sourceTarget = Join-Path $public 'src'
 if (Test-Path -LiteralPath $sourceTarget) {
-    throw 'O destino src ja existe. Exporte para uma arvore limpa para preservar uma revisao auditavel.'
+    if (-not $UpdateExisting) {
+        throw 'O destino src ja existe. Use -UpdateExisting somente em uma branch de release auditada.'
+    }
+} else {
+    New-Item -ItemType Directory -Path $sourceTarget -Force | Out-Null
 }
 
 $privateSource = Join-Path $private 'src'
-New-Item -ItemType Directory -Path $sourceTarget -Force | Out-Null
 $sourceFiles = @(Get-ChildItem -LiteralPath $privateSource -File -Recurse | Where-Object {
     $_.FullName -notmatch '[\\/](bin|obj)[\\/]'
 })

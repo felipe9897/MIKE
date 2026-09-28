@@ -30,4 +30,6 @@ jobs:
           php-version: '8.3'
       - name: Test .NET projects
         shell: pwsh
-        run: dotnet test ./src/Mike.Tests/Mike.Tests.csproj -c Release
+        run: |
+          dotnet clean ./src/Mike.Tests/Mike.Tests.csproj -c Release
+          dotnet test ./src/Mike.Tests/Mike.Tests.csproj -c Release
