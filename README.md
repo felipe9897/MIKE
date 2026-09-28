@@ -37,6 +37,7 @@ Veja os termos completos em [LICENSE.md](LICENSE.md). Esta e uma licenca de codi
 - Comunidade: issues e discussoes, conforme disponibilidade.
 - Suporte profissional, instalacao, integracoes e desenvolvimento personalizado: servicos pagos da MiniKe.
 - Doacoes e patrocinio ajudam a financiar testes, acessibilidade, traducao e manutencao. Consulte [SUPPORT.md](SUPPORT.md).
+- Apoio oficial por PagSeguro/PagBank ou PIX CNPJ: [APOIE.md](APOIE.md).
 
 ## Criador
 
