@@ -8,9 +8,9 @@ O MIKE foi projetado para conversar, traduzir, programar, automatizar tarefas au
 
 ## Estado do projeto
 
-- Versao estavel atual: **1.0.51**.
+- Versao estavel atual: **1.0.53**.
 - Download oficial para Windows: [MikeLocalSetup.exe](https://minike.com.br/local-ai/MikeLocalSetup.exe).
-- SHA-256: `C416FD5DEF932A758E851C9DA75A1825BB87976C8A72FFD3B9994004DC4BFB37`.
+- SHA-256: `05A323DD1ACB9A919812902015650EAAE30947D47A39C8A1F25A50C7E2E16E9D`.
 - Aplicativo Windows, servico, atualizador e autocura em desenvolvimento ativo.
 - Instalador oficial publicado em [minike.com.br/local-ai](https://minike.com.br/local-ai/).
 - Codigo liberado por modulos auditados; sistemas internos, credenciais, dados de clientes e infraestrutura privada nao fazem parte deste repositorio.

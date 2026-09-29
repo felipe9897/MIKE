@@ -167,7 +167,7 @@ namespace Mike.Common
     public static class MikeConstants
     {
         public const string AppName = "Mike Local";
-        public const string Version = "1.0.51";
+        public const string Version = "1.0.53";
         public const string PipeName = "MikeLocalIPC";
         public const string HermesPort = "8080";
     }
