@@ -381,11 +381,10 @@ if ($InstallMissing -and -not $backendOk -and (Test-Path -LiteralPath $backendCo
     } while (-not $backendOk -and (Get-Date) -lt $deadline)
     # The native MSI owns shortcuts. Remove compatibility shortcuts so only
     # one Mike is visible to the user.
-    @(
-        (Join-Path ([Environment]::GetFolderPath('Desktop')) 'Mike IA Local - Minike.lnk'),
-        (Join-Path ([Environment]::GetFolderPath('Programs')) 'Mike IA Local - Minike.lnk'),
-        (Join-Path ([Environment]::GetFolderPath('Startup')) 'Mike IA Local - Minike.lnk')
-    ) | Where-Object { Test-Path -LiteralPath $_ } | Remove-Item -Force -ErrorAction SilentlyContinue
+    @('Desktop','Programs','Startup') | ForEach-Object {
+        $specialFolder = [Environment]::GetFolderPath($_)
+        if ($specialFolder) { Join-Path $specialFolder 'Mike IA Local - Minike.lnk' }
+    } | Where-Object { $_ -and (Test-Path -LiteralPath $_) } | Remove-Item -Force -ErrorAction SilentlyContinue
 }
 $results.Add((Result 'Backend completo de ferramentas' $backendOk ($(if($backendOk){'rotas HTTP 47885 disponíveis para a ponte nativa'}else{'backend de compatibilidade indisponível'}))))
 
