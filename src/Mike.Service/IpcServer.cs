@@ -53,7 +53,7 @@ namespace Mike.Service
                 }
                 catch (Exception ex)
                 {
-                    _logger.LogError($"IPC Server error: {MikeLogger.Redact(ex.Message)}");
+                    _logger.LogError("IPC Server error ({ExceptionType}).", ex.GetType().Name);
                     await Task.Delay(1000, token);
                 }
             }
@@ -67,7 +67,7 @@ namespace Mike.Service
                 {
                     PermissionLevel sessionLevel = GetSessionPermissionLevel();
                     string request = await MikeIpcProtocol.ReadMessageAsync(server, token);
-                    _logger.LogInformation($"Received IPC request: {MikeLogger.Redact(request)}");
+                    _logger.LogInformation("Received IPC request over named pipe.");
 
                     string response;
                     if (request.StartsWith("approve:"))
@@ -107,12 +107,12 @@ namespace Mike.Service
                 }
                 catch (Exception ex)
                 {
-                    _logger.LogError($"IPC Client handler error: {MikeLogger.Redact(ex.Message)}");
+                    _logger.LogError("IPC Client handler error ({ExceptionType}).", ex.GetType().Name);
                     try
                     {
                         string errorResponse = System.Text.Json.JsonSerializer.Serialize(new {
                             type = "error",
-                            message = "Internal service error: " + ex.Message
+                            message = "Internal service error. Check the service log for details."
                         });
                         await MikeIpcProtocol.WriteMessageAsync(server, errorResponse);
                     }
